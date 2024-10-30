@@ -9,7 +9,7 @@
  * const message = generateMessage("Jack", 25); // "Hey Jack, happy 25 birthday!"
  */
 function generateMessage(name, age) {
-
+    return "Hey " + name + ", happy" + age + " birthday!";
 }
 
 /**
@@ -22,7 +22,14 @@ function generateMessage(name, age) {
  * const title = titleCase("hello world"); // title will be "Hello World"
  */
 function titleCase(sentence) {
+    const title = sentence.split(" ");
 
+    for (let i = 0; i < title.length; i++) {
+        title[i] = title[i][0].toUpperCase() + title[i].substr(1);
+    }
+
+    title.join(" ");
+    return sentence
 }
 
 /**
@@ -36,7 +43,16 @@ function titleCase(sentence) {
  * const sum = sumOfRange(1, 4); // sum will be 10
  */
 function sumOfRange(start, end) {
+    let numbers = []
+    let sum = 0;
+    for (let i = start; i <= end; i++) {
+        numbers.push(i);
+    }
+        for (let i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
+        }
 
+        return sum
 }
 
 
@@ -51,8 +67,15 @@ function sumOfRange(start, end) {
  * const anotherAcronym = generateAcronym("Federal Bureau Investigation"); // anotherAcronym will be "FBI"
  */
 function generateAcronym(sentence) {
+        return sentence
+            .split(' ')
+            .filter(word => !/\d/.test(word))
+            .map(word => word[0].toUpperCase())
+            .join('');
 
-}
+    }
+//samlet af elementer online.
+
 
 
 /**
